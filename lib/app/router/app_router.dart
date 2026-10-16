@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:llmm/app/router/app_routes.dart';
-import 'package:llmm/feature/product/presentation/ui/product_screen.dart';
+import 'package:llmm/feature/product/presentation/pages/product_screen.dart';
 import 'package:llmm/initial_screen.dart';
  
 final GoRouter goRouter = GoRouter(

@@ -15,7 +15,6 @@ class ProductRemoteDataSource {
       final products = response.data['products'] as List;
       return products.map((e) => ProductModel.fromJson(e)).toList();
     } on DioException catch (e) {
-      
       throw ServerException(e.message ?? 'Unable to fetch products');
     }
   }
