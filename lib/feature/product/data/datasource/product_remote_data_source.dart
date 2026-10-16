@@ -9,11 +9,11 @@ class ProductRemoteDataSource {
 
   ProductRemoteDataSource(this.apiClient);
 
-  Future<List<ProductModel>> fetchProduct() async {
+  Future<ProductResponseModel> fetchProduct(int skip) async {
     try {
-      final response = await apiClient.get(ApiConstant.product);
-      final products = response.data['products'] as List;
-      return products.map((e) => ProductModel.fromJson(e)).toList();
+      final response = await apiClient.get("${ApiConstant.product}?limit=5&skip=$skip");
+      final productsResponse =ProductResponseModel.fromJson(response.data);
+      return productsResponse;
     } on DioException catch (e) {
       throw ServerException(e.message ?? 'Unable to fetch products');
     }

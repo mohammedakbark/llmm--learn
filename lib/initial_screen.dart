@@ -11,7 +11,7 @@ class InitialScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            context.go(AppRoutes.products);
+            context.push(AppRoutes.products);
           },
           child: Text("Product"),
         ),

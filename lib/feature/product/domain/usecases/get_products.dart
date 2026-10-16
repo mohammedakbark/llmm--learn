@@ -5,5 +5,5 @@ class GetProducts {
   final ProductRepo _productRepo;
   GetProducts(this._productRepo);
 
-  Future<List<Product>> call() => _productRepo.getProduct();
+  Future<ProductResponse> call(int skip) => _productRepo.getProduct(skip);
 }
